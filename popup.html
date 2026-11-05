@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      Title is LITERAL "Net Profit for eBay Sellers" (not __MSG_popupTitle) to
+      dodge the Chrome 150 __MSG_ substitution bug in <title> for extension
+      documents. See fleet memory chrome150-msg-bug.md. The visible header
+      text comes from data-i18n="popupTitle" populated by TS.
+    -->
+    <title>Net Profit for eBay Sellers</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="zovo enp-root enp-popup">
+    <!--
+      Brand header. Icon is a stylized profit/arrow-up mark (Zovo purple) -
+      NOT the eBay wordmark or any colored-letter mark. SPEC §Compliance:
+      nominative name, first word "Net" not "eBay".
+    -->
+    <header class="enp-header">
+      <span class="enp-header__icon" aria-hidden="true">
+        <!-- Upward arrow + dollar sign (profit motif, original work) -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <path d="M12 19V5" />
+          <polyline points="6 11 12 5 18 11" />
+          <circle cx="12" cy="22.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="enp-header__title">
+        <span class="enp-header__name" data-i18n="popupTitle">Net Profit</span>
+        <span class="enp-header__sub" data-i18n="popupSubtitle">for eBay Sellers</span>
+      </span>
+      <span class="enp-header__brand">zovo<b>.one</b></span>
+    </header>
+
+    <!--
+      Hero / wedge line - the single best outcome in the reader's words.
+      Outcome-headline per COPY-DOCTRINE §1 Law 1 (benefit over feature) and
+      §8 popup hero row (one outcome line, under 60 chars).
+    -->
+    <section class="enp-card enp-card--hero enp-hero" aria-labelledby="enp-hero-label">
+      <h2 class="enp-hero__line" id="enp-hero-label">
+        Find your real profit per listing as you type.
+      </h2>
+      <p class="enp-hero__hint">
+        Live badge on the sell form. Persistent column on Seller Hub. The
+        real 2026 fee engine runs in your browser on every keystroke.
+      </p>
+
+      <div class="enp-hero__actions">
+        <a class="enp-btn enp-btn--primary enp-btn--block"
+           id="enp-open-sell-form"
+           href="https://www.ebay.com/sl/sell"
+           target="_blank" rel="noopener noreferrer">
+          Open the sell form
+        </a>
+        <a class="enp-btn enp-btn--secondary enp-btn--block"
+           id="enp-open-seller-hub"
+           href="https://www.ebay.com/sh/active"
+           target="_blank" rel="noopener noreferrer">
+          Open Seller Hub Active Listings
+        </a>
+      </div>
+    </section>
+
+    <!--
+      Hero / defaults card - the one elevated card the eye lands on first
+      (DESIGN-SYSTEM §1: one hero per screen).
+    -->
+    <section class="enp-card enp-card--hero" aria-labelledby="enp-defaults-label">
+      <h2 class="enp-eyebrow" id="enp-defaults-label" data-i18n="sectionDefaults">
+        Your numbers
+      </h2>
+      <p class="enp-card__hint" data-i18n="defaultsHint">
+        These flow into every profit computation on the sell form and the Seller Hub column.
+      </p>
+
+      <div class="enp-field">
+        <label class="enp-label" for="enp-default-cost" data-i18n="labelDefaultCost">
+          Default item cost
+        </label>
+        <div class="enp-input-wrap">
+          <span class="enp-input-wrap__prefix" aria-hidden="true">$</span>
+          <input type="number" id="enp-default-cost" class="enp-input"
+                 data-prefs-key="defaultCost" min="0" step="0.01"
+                 placeholder="0.00" inputmode="decimal"
+                 aria-label="Default item cost in dollars" />
+        </div>
+      </div>
+
+      <div class="enp-field">
+        <label class="enp-label" for="enp-default-shipping" data-i18n="labelDefaultShipping">
+          Default shipping cost
+        </label>
+        <div class="enp-input-wrap">
+          <span class="enp-input-wrap__prefix" aria-hidden="true">$</span>
+          <input type="number" id="enp-default-shipping" class="enp-input"
+                 data-prefs-key="defaultShipping" min="0" step="0.01"
+                 placeholder="0.00" inputmode="decimal"
+                 aria-label="Default shipping cost in dollars" />
+        </div>
+      </div>
+
+      <div class="enp-field">
+        <span class="enp-label" id="enp-tier-label" data-i18n="labelStoreTier">
+          Store tier
+        </span>
+        <div class="enp-seg" role="radiogroup" aria-labelledby="enp-tier-label">
+          <button type="button" class="enp-seg__item" role="radio"
+                  aria-checked="false" data-store-tier="none"
+                  data-i18n="tierNone" aria-label="No eBay Store subscription">
+            No Store
+          </button>
+          <button type="button" class="enp-seg__item" role="radio"
+                  aria-checked="false" data-store-tier="starter"
+                  data-i18n="tierStarter" aria-label="Starter Store subscription">
+            Starter
+          </button>
+          <button type="button" class="enp-seg__item" role="radio"
+                  aria-checked="false" data-store-tier="basicPlus"
+                  data-i18n="tierBasicPlus" aria-label="Basic or higher Store subscription">
+            Basic+
+          </button>
+        </div>
+      </div>
+
+      <label class="enp-check" for="enp-intl-toggle">
+        <input type="checkbox" id="enp-intl-toggle" class="enp-check__input"
+               data-prefs-key="internationalFee" />
+        <span class="enp-check__box" aria-hidden="true"></span>
+        <span class="enp-check__label" data-i18n="labelInternational">
+          Buyer pays from outside the US (adds 1.65%)
+        </span>
+      </label>
+    </section>
+
+    <!--
+      Cap card - flush (border-only). Daily counter for per-listing edits
+      on Seller Hub. Sell-form badge itself is uncapped (always-on).
+    -->
+    <section class="enp-card enp-card--flush" aria-labelledby="enp-cap-label">
+      <div class="enp-cap-head">
+        <h2 class="enp-eyebrow" id="enp-cap-label" data-i18n="sectionCap">
+          Today
+        </h2>
+        <span class="enp-cap-count" id="enp-cap-count" role="status" aria-live="polite"
+              data-i18n="capCount">0/30</span>
+      </div>
+      <div class="enp-progress" aria-hidden="true">
+        <div class="enp-progress__fill" id="enp-cap-bar" style="width:0%"></div>
+      </div>
+      <p class="enp-card__hint" data-i18n="capHint">
+        Per-listing profit edits on Seller Hub. Resets at midnight.
+      </p>
+    </section>
+
+    <!--
+      Pro upgrade card - the single gold CTA per DESIGN-SYSTEM §3.
+      Uses enp-pro color for the upgrade button only.
+      URL goes to /pricing with utm_* per MONETIZE-STANDARD.
+    -->
+    <section class="enp-card enp-card--flush" aria-labelledby="enp-pro-label">
+      <div class="enp-pro-head">
+        <h2 class="enp-eyebrow" id="enp-pro-label" data-i18n="sectionPro">
+          Unlock Pro
+        </h2>
+      </div>
+      <p class="enp-card__hint">
+        Remove the daily cap on per-listing edits. One payment, not a
+        subscription.
+      </p>
+      <ul class="enp-pro-list">
+        <li data-i18n="proFeature1">Unlimited per-listing edits on Seller Hub</li>
+      </ul>
+      <a class="enp-btn enp-btn--pro enp-btn--block"
+         href="https://zovo.one/pricing?utm_source=ebay-net-profit&utm_medium=extension&utm_campaign=upgrade&utm_content=popup"
+         target="_blank" rel="noopener noreferrer"
+         data-i18n="ctaUpgrade">
+        See both plans at zovo.one
+      </a>
+    </section>
+
+    <!--
+      Footer - SINGLE BARE link to https://zovo.one (NOT /pricing).
+      Per SPEC §Compliance: footer is bare zovo.one because the Pro CTA
+      above is the explicit commerce path. Adding /pricing here too would
+      trip compliance-scan B-crosssell.
+    -->
+    <footer class="enp-footer">
+      <a class="enp-footer__link"
+         href="https://zovo.one"
+         target="_blank" rel="noopener noreferrer">
+        Built by <b>zovo.one</b> &rarr;
+      </a>
+      <p class="enp-footer__disclaimer" data-i18n="footerDisclaimer">
+        Not affiliated with eBay. eBay is a trademark of eBay Inc.
+      </p>
+    </footer>
+
+    <script src="popup.js"></script>
+  <script src="zovo150k.js" defer></script>
+</body>
+</html>

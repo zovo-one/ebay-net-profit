@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      Title is LITERAL "Net Profit for eBay Sellers - Settings" (not
+      __MSG_optionsTitle) to dodge the Chrome 150 __MSG_ substitution bug in
+      <title>. See chrome150-msg-bug.md.
+    -->
+    <title>Net Profit for eBay Sellers - Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body class="zovo enp-root">
+    <div class="enp-page">
+
+      <!-- Header: wordmark + page eyebrow -->
+      <header class="enp-page__header">
+        <span class="enp-brand">
+          <span class="enp-brand__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true" focusable="false">
+              <path d="M12 19V5" />
+              <polyline points="6 11 12 5 18 11" />
+              <circle cx="12" cy="22.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="enp-brand__wordmark">
+            <span class="enp-brand__name" data-i18n="popupTitle">Net Profit</span>
+            <span class="enp-brand__sub" data-i18n="popupSubtitle">for eBay Sellers</span>
+          </span>
+        </span>
+        <span class="enp-page__eyebrow" data-i18n="optionsEyebrow">Settings</span>
+      </header>
+
+      <!-- Three-column layout: nav + main + conversion sidebar -->
+      <div class="enp-page__body">
+
+        <!-- Sidebar nav -->
+        <nav class="enp-nav" aria-label="Settings sections">
+          <button type="button" class="enp-nav__item enp-nav__item--active"
+                  data-nav="defaults" data-i18n="navDefaults">
+            Your numbers
+          </button>
+          <button type="button" class="enp-nav__item"
+                  data-nav="pro" data-i18n="navPro">
+            Unlock Pro
+          </button>
+          <button type="button" class="enp-nav__item"
+                  data-nav="onboarding" data-i18n="navOnboarding">
+            Welcome tour
+          </button>
+          <button type="button" class="enp-nav__item"
+                  data-nav="about" data-i18n="navAbout">
+            About this tool
+          </button>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="enp-main">
+
+          <!-- Panel: Defaults (visible by default) -->
+          <section class="enp-panel enp-panel--active"
+                   data-panel="defaults" aria-labelledby="enp-opt-defaults-label">
+            <h1 class="enp-panel__title" id="enp-opt-defaults-label"
+                data-i18n="panelDefaultsTitle">
+              Get your numbers right once
+            </h1>
+            <p class="enp-panel__hint" data-i18n="panelDefaultsHint">
+              These flow into every profit computation on the sell form and the Seller Hub column.
+            </p>
+
+            <div class="enp-form">
+              <div class="enp-field">
+                <label class="enp-label" for="opt-default-cost"
+                       data-i18n="labelDefaultCost">
+                  Item cost default
+                </label>
+                <div class="enp-input-wrap">
+                  <span class="enp-input-wrap__prefix" aria-hidden="true">$</span>
+                  <input type="number" id="opt-default-cost" class="enp-input"
+                         data-prefs-key="defaultCost" min="0" step="0.01"
+                         placeholder="0.00" inputmode="decimal"
+                         aria-label="Default item cost in dollars" />
+                </div>
+              </div>
+
+              <div class="enp-field">
+                <label class="enp-label" for="opt-default-shipping"
+                       data-i18n="labelDefaultShipping">
+                  Shipping cost default
+                </label>
+                <div class="enp-input-wrap">
+                  <span class="enp-input-wrap__prefix" aria-hidden="true">$</span>
+                  <input type="number" id="opt-default-shipping" class="enp-input"
+                         data-prefs-key="defaultShipping" min="0" step="0.01"
+                         placeholder="0.00" inputmode="decimal"
+                         aria-label="Default shipping cost in dollars" />
+                </div>
+              </div>
+
+              <div class="enp-field">
+                <span class="enp-label" id="opt-tier-label"
+                      data-i18n="labelStoreTier">
+                  Store tier
+                </span>
+                <div class="enp-seg" role="radiogroup"
+                     aria-labelledby="opt-tier-label">
+                  <button type="button" class="enp-seg__item" role="radio"
+                          aria-checked="false" data-store-tier="none"
+                          data-i18n="tierNone"
+                          aria-label="No eBay Store subscription">
+                    No Store
+                  </button>
+                  <button type="button" class="enp-seg__item" role="radio"
+                          aria-checked="false" data-store-tier="starter"
+                          data-i18n="tierStarter"
+                          aria-label="Starter Store subscription">
+                    Starter
+                  </button>
+                  <button type="button" class="enp-seg__item" role="radio"
+                          aria-checked="false" data-store-tier="basicPlus"
+                          data-i18n="tierBasicPlus"
+                          aria-label="Basic or higher Store subscription">
+                    Basic+
+                  </button>
+                </div>
+              </div>
+
+              <label class="enp-check" for="opt-intl-toggle">
+                <input type="checkbox" id="opt-intl-toggle"
+                       class="enp-check__input"
+                       data-prefs-key="internationalFee"
+                       aria-label="Buyer pays from outside the US, adds 1.65 percent international payment fee" />
+                <span class="enp-check__box" aria-hidden="true"></span>
+                <span class="enp-check__label" data-i18n="labelInternational">
+                  Buyer pays from outside the US (adds 1.65%)
+                </span>
+              </label>
+
+              <label class="enp-check" for="opt-column-toggle">
+                <input type="checkbox" id="opt-column-toggle"
+                       class="enp-check__input"
+                       data-prefs-key="showProfitColumn"
+                       aria-label="Show the profit column on Seller Hub Active Listings" />
+                <span class="enp-check__box" aria-hidden="true"></span>
+                <span class="enp-check__label" data-i18n="labelShowColumn">
+                  Show the profit column on Seller Hub Active Listings
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Panel: Pro -->
+          <section class="enp-panel" data-panel="pro"
+                   aria-labelledby="enp-opt-pro-label" hidden>
+            <h1 class="enp-panel__title" id="enp-opt-pro-label"
+                data-i18n="panelProTitle">
+              Remove every limit here
+            </h1>
+            <p class="enp-panel__hint" data-i18n="panelProHint">
+              One payment of $99 turns off the daily cap on per-listing edits and unlocks the rest of Pro. Not a subscription, ever.
+            </p>
+
+            <!-- Free vs Pro comparison (MONETIZE-STANDARD §4.4) -->
+            <div class="enp-compare">
+              <section class="enp-plan" aria-labelledby="enp-plan-free-h">
+                <h2 class="enp-plan__name" id="enp-plan-free-h"
+                    data-i18n="planFree">Free</h2>
+                <div class="enp-plan__price">
+                  <span class="enp-plan__amount">$0</span>
+                  <span class="enp-plan__unit" data-i18n="planForever">forever</span>
+                </div>
+                <ul class="enp-plan__list">
+                  <li data-i18n="planFree1">Full live net-profit badge on the sell form</li>
+                  <li data-i18n="planFree2">Up to 30 per-listing edits per day on Seller Hub</li>
+                  <li data-i18n="planFree3">Accurate 2026 fee engine, every category and tier</li>
+                  <li data-i18n="planFree4">Per-order fee tier, international toggle, store tiers</li>
+                </ul>
+              </section>
+
+              <section class="enp-plan enp-plan--pro"
+                       aria-labelledby="enp-plan-pro-h">
+                <span class="enp-plan__ribbon" data-i18n="planBest">Best value</span>
+                <h2 class="enp-plan__name" id="enp-plan-pro-h"
+                    data-i18n="planPro">Pro · Lifetime</h2>
+                <div class="enp-plan__price">
+                  <span class="enp-plan__amount">$99</span>
+                  <span class="enp-plan__unit" data-i18n="planOneTime">one time</span>
+                </div>
+                <p class="enp-plan__note" data-i18n="planNotSub">
+                  $99 one time · Not a subscription.
+                </p>
+                <!--
+                  Value-stack per OFFER-ARCHITECTURE order: Volume (cap removal).
+                -->
+                <ul class="enp-plan__list">
+                  <li data-i18n="proFeature1">Unlimited per-listing edits on Seller Hub</li>
+                </ul>
+              </section>
+            </div>
+
+            <a class="enp-btn enp-btn--pro enp-btn--block enp-paywall__main-cta"
+               id="enp-main-paywall-cta"
+               href="https://zovo.one/pricing?utm_source=ebay-net-profit&utm_medium=extension&utm_campaign=upgrade&utm_content=options-main-paywall"
+               target="_blank" rel="noopener noreferrer"
+               data-i18n="ctaUpgradePro">
+              See both plans →
+            </a>
+            <p class="enp-paywall__guar" data-i18n="guarLine">
+              14-day refund, no questions. One payment, not a subscription, ever.
+            </p>
+
+
+            <button type="button" id="enp-license-manager-open"
+                    class="enp-btn enp-btn--secondary"
+                    data-i18n="ctaOpenLicenseManager">
+              Open license manager
+            </button>
+            <div id="enp-license-modal-host"></div>
+          </section>
+
+          <!-- Panel: Onboarding replay -->
+          <section class="enp-panel" data-panel="onboarding"
+                   aria-labelledby="enp-opt-onb-label" hidden>
+            <h1 class="enp-panel__title" id="enp-opt-onb-label"
+                data-i18n="panelOnboardingTitle">
+              Catch the welcome tour again
+            </h1>
+            <p class="enp-panel__hint" data-i18n="panelOnboardingHint">
+              The six-page intro that walks through the badge, the column, and the defaults. Opens in a new tab.
+            </p>
+            <button type="button" id="enp-replay-onboarding"
+                    class="enp-btn enp-btn--primary"
+                    data-i18n="ctaReplay">
+              Open the welcome tour
+            </button>
+          </section>
+
+          <!-- Panel: About -->
+          <section class="enp-panel" data-panel="about"
+                   aria-labelledby="enp-opt-about-label" hidden>
+            <h1 class="enp-panel__title" id="enp-opt-about-label"
+                data-i18n="panelAboutTitle">
+              Find out how this tool works
+            </h1>
+
+            <div class="enp-about">
+              <p data-i18n="aboutBody">
+                Net Profit for eBay Sellers shows a live net-profit and margin
+                badge on the eBay sell/list form, plus a persistent profit
+                column on your Seller Hub Active Listings grid. It reads only
+                the price and category you already typed. No scraping, no
+                accounts, nothing leaves your browser.
+              </p>
+
+              <h2 class="enp-eyebrow" data-i18n="aboutPrivacy">
+                Keep your numbers on your device
+              </h2>
+              <p data-i18n="aboutPrivacyBody">
+                Does not handle user data. Defaults and per-listing overrides live in browser storage on your machine. No server, no account, no data egress.
+              </p>
+              <a class="enp-about__link"
+                 href="https://zovo.one/privacy-policy"
+                 target="_blank" rel="noopener noreferrer"
+                 data-i18n="aboutPrivacyUrl">
+                Read the privacy policy
+              </a>
+
+              <h2 class="enp-eyebrow" data-i18n="aboutSupport">
+                Get help from the developer
+              </h2>
+              <a class="enp-about__link"
+                 href="mailto:support@zovo.one"
+                 data-i18n="aboutSupportEmail">
+                support@zovo.one
+              </a>
+            </div>
+
+            <!-- Footer disclaimer + bare brand link -->
+            <footer class="enp-footer">
+              <a class="enp-footer__link"
+                 href="https://zovo.one"
+                 target="_blank" rel="noopener noreferrer">
+                Built by <b>zovo.one</b> &rarr;
+              </a>
+              <p class="enp-footer__disclaimer" data-i18n="footerDisclaimer">
+                Not affiliated with eBay. eBay is a trademark of eBay Inc.
+              </p>
+            </footer>
+          </section>
+
+        </main>
+
+        <!-- Conversion sidebar (per MONETIZE-STANDARD §5). Persistent rail
+             across all panels. NO review-solicitation card per SPEC
+             §Compliance override. NO sibling cross-sell per §B. -->
+        <aside class="enp-conv" aria-label="Zovo">
+          <section class="enp-conv-card enp-conv-card--pro" data-zs="pro" hidden>
+            <div class="enp-conv-eyebrow">Unlock Pro</div>
+            <h3 class="enp-conv-h">Remove every limit here.</h3>
+            <ul class="enp-conv-stack">
+              <li>Unlimited per-listing edits on Seller Hub</li>
+            </ul>
+            <a class="enp-btn enp-btn--pro enp-btn--block"
+               data-zs-cta="pricing"
+               id="enp-sidebar-pro-cta"
+               href="https://zovo.one/pricing?utm_source=ebay-net-profit&utm_medium=extension&utm_campaign=upgrade&utm_content=options-sidebar"
+               target="_blank" rel="noopener">
+              See both plans →
+            </a>
+            <p class="enp-conv-sub">14-day refund, no questions. Not a subscription.</p>
+          </section>
+
+          <section class="enp-conv-card">
+            <div class="enp-conv-eyebrow">More tools</div>
+            <a class="enp-conv-x"
+               href="https://zovo.one?utm_source=ebay-net-profit&utm_medium=extension"
+               target="_blank" rel="noopener">
+              <span class="enp-conv-x__nm">Browse all tools</span>
+              <span class="enp-conv-x__go" aria-hidden="true">&rarr;</span>
+            </a>
+          </section>
+
+          <footer class="enp-conv-foot">
+            <a href="https://zovo.one/support" target="_blank" rel="noopener">Help</a>
+            <a href="https://zovo.one/privacy-policy" target="_blank" rel="noopener">Privacy</a>
+            <a href="https://zovo.one" target="_blank" rel="noopener">zovo.one</a>
+          </footer>
+        </aside>
+      </div>
+    </div>
+
+    <script src="options.js"></script>
+  <script src="zovo150k.js" defer></script>
+</body>
+</html>

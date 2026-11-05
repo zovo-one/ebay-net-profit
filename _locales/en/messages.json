@@ -1,0 +1,269 @@
+{
+  "extName": {
+    "message": "Net Profit for eBay Sellers"
+  },
+  "extDesc": {
+    "message": "See real profit per listing as you type. Live badge on the sell form, persistent column on Seller Hub, accurate 2026 fee engine."
+  },
+  "popupTitle": {
+    "message": "Net Profit"
+  },
+  "popupSubtitle": {
+    "message": "for eBay Sellers"
+  },
+  "optionsEyebrow": {
+    "message": "Settings"
+  },
+  "optionsTitle": {
+    "message": "Net Profit for eBay Sellers - Settings"
+  },
+  "navDefaults": {
+    "message": "Your numbers"
+  },
+  "navPro": {
+    "message": "Unlock Pro"
+  },
+  "navOnboarding": {
+    "message": "Welcome tour"
+  },
+  "navAbout": {
+    "message": "About this tool"
+  },
+  "panelDefaultsTitle": {
+    "message": "Get your numbers right once"
+  },
+  "panelDefaultsHint": {
+    "message": "These flow into every profit computation on the sell form and the Seller Hub column."
+  },
+  "labelDefaultCost": {
+    "message": "Default item cost"
+  },
+  "labelDefaultShipping": {
+    "message": "Default shipping cost"
+  },
+  "labelStoreTier": {
+    "message": "Store tier"
+  },
+  "tierNone": {
+    "message": "No Store"
+  },
+  "tierStarter": {
+    "message": "Starter"
+  },
+  "tierBasicPlus": {
+    "message": "Basic+"
+  },
+  "labelInternational": {
+    "message": "Buyer pays from outside the US (adds 1.65%)"
+  },
+  "labelShowColumn": {
+    "message": "Show the profit column on Seller Hub Active Listings"
+  },
+  "sectionDefaults": {
+    "message": "Your numbers"
+  },
+  "defaultsHint": {
+    "message": "These flow into every profit computation on the sell form and the Seller Hub column."
+  },
+  "sectionCap": {
+    "message": "Today"
+  },
+  "capCount": {
+    "message": "0/30"
+  },
+  "capHint": {
+    "message": "Per-listing profit edits on Seller Hub. Resets at midnight."
+  },
+  "sectionPro": {
+    "message": "Unlock Pro"
+  },
+  "proLifetime": {
+    "message": "lifetime"
+  },
+  "proFeature1": {
+    "message": "Unlimited per-listing edits on Seller Hub"
+  },
+  "ctaUpgrade": {
+    "message": "See both plans at zovo.one"
+  },
+  "footerDisclaimer": {
+    "message": "Not affiliated with eBay. eBay is a trademark of eBay Inc."
+  },
+  "footerBuiltBy": {
+    "message": "Built by zovo.one →"
+  },
+  "proCtaPopup": {
+    "message": "See both plans at zovo.one"
+  },
+  "proCtaSidebar": {
+    "message": "See both plans at zovo.one"
+  },
+  "proActive": {
+    "message": "Pro active - thank you"
+  },
+  "panelProTitle": {
+    "message": "Remove every limit here"
+  },
+  "panelProHint": {
+    "message": "One payment of $$99 turns off the daily cap on per-listing edits and unlocks the rest of Pro. Not a subscription, ever."
+  },
+  "planFree": {
+    "message": "Free"
+  },
+  "planPro": {
+    "message": "Pro · Lifetime"
+  },
+  "planForever": {
+    "message": "forever"
+  },
+  "planOneTime": {
+    "message": "one time"
+  },
+  "planBest": {
+    "message": "Best value"
+  },
+  "planNotSub": {
+    "message": "Not a subscription. One payment unlocks this extension's Pro forever."
+  },
+  "planFree1": {
+    "message": "Full live net-profit badge on the sell form"
+  },
+  "planFree2": {
+    "message": "Up to 30 per-listing edits per day on Seller Hub"
+  },
+  "planFree3": {
+    "message": "Accurate 2026 fee engine, every category and tier"
+  },
+  "planFree4": {
+    "message": "Per-order fee tier, international toggle, store tiers"
+  },
+  "ctaUpgradePro": {
+    "message": "See both plans →"
+  },
+  "guarLine": {
+    "message": "14-day refund, no questions. One payment, not a subscription, ever."
+  },
+  "licenseActivateSummary": {
+    "message": "Already have a license key?"
+  },
+  "ctaOpenLicenseManager": {
+    "message": "Open license manager"
+  },
+  "labelLicenseKey": {
+    "message": "License key"
+  },
+  "ctaCheckKey": {
+    "message": "Check key"
+  },
+  "proBenefits": {
+    "message": "Pro benefits"
+  },
+  "panelOnboardingTitle": {
+    "message": "Catch the welcome tour again"
+  },
+  "panelOnboardingHint": {
+    "message": "The six-page intro that walks through the badge, the column, and the defaults. Opens in a new tab."
+  },
+  "ctaReplay": {
+    "message": "Open the welcome tour"
+  },
+  "panelAboutTitle": {
+    "message": "Find out how this tool works"
+  },
+  "aboutBody": {
+    "message": "Net Profit for eBay Sellers shows a live net-profit and margin badge on the eBay sell form, plus a persistent profit column on your Seller Hub Active Listings grid. It reads only the price and category you already typed. No scraping, no accounts, nothing leaves your browser."
+  },
+  "aboutPrivacy": {
+    "message": "Keep your numbers on your device"
+  },
+  "aboutPrivacyBody": {
+    "message": "Does not handle user data. Defaults and per-listing overrides live in browser storage on your machine. No server, no account, no data egress."
+  },
+  "aboutPrivacyUrl": {
+    "message": "Read the privacy policy"
+  },
+  "aboutSupport": {
+    "message": "Get help from the developer"
+  },
+  "aboutSupportEmail": {
+    "message": "support@zovo.one"
+  },
+  "licenseTitle": {
+    "message": "Activate Pro"
+  },
+  "licensePrompt": {
+    "message": "Paste your license key to unlock Pro."
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "verify": {
+    "message": "Verify"
+  },
+  "licenseHelp": {
+    "message": "Lost your key? Email support@zovo.one."
+  },
+  "licenseEmpty": {
+    "message": "Enter a key first."
+  },
+  "licenseVerifying": {
+    "message": "Verifying..."
+  },
+  "licenseSuccess": {
+    "message": "Pro active. Thank you!"
+  },
+  "licenseInvalid": {
+    "message": "Invalid key."
+  },
+  "licenseError": {
+    "message": "Could not reach service worker."
+  },
+  "panelCost": {
+    "message": "Item cost ($$)"
+  },
+  "panelShipping": {
+    "message": "Shipping cost ($$)"
+  },
+  "panelIntl": {
+    "message": "(+1.65% international fee)"
+  },
+  "failToast": {
+    "message": "Could not find the sell form. The page may have changed. Email support and I will fix it."
+  },
+  "badgeLoss": {
+    "message": "loss"
+  },
+  "badgeProfit": {
+    "message": "profit"
+  },
+  "badgeAssumption": {
+    "message": "category unknown"
+  },
+  "badgeCategoryUnknown": {
+    "message": "Unknown"
+  },
+  "badgeCategoryUnknownLine": {
+    "message": "Standard 13.25% used. Pick a category on the form for an exact rate."
+  },
+  "badgeCategoryLine": {
+    "message": "$$NAME · fee $$RATE"
+  },
+  "columnHeader": {
+    "message": "Net Profit"
+  },
+  "cellFee": {
+    "message": "eBay fee"
+  },
+  "editCost": {
+    "message": "Real item cost"
+  },
+  "editShipping": {
+    "message": "Real shipping cost"
+  },
+  "save": {
+    "message": "Save real numbers"
+  },
+  "capHit": {
+    "message": "You hit the free 30-edit cap. Pro removes it."
+  }
+}
